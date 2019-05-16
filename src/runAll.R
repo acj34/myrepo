@@ -16,11 +16,13 @@ kStart <- kahuna %>%
 gm182UP <- read_csv(here::here('data', '2018-11-27_Gm182-UserPoints-Start-CEE-Locations-Kahuna.csv')) %>% 
   mutate(status = 'userPoints')
 head(gm182UP)
+colnames(gm182UP)
 
 # Read in Gm182 Data: 100 estimated positions of Gm182
 gm182 <- read_csv(here::here('data', '2018-11-27_Gm182-Start-CEE-Locations-Kahuna.csv')) %>% 
   mutate(status = 'noUserPoints')
 head(gm182)
+colnames(gm182)
 
 # Minimal Wrangling of the data
 gmpts <- bind_rows(gm182, gm182UP)
